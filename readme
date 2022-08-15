@@ -1,0 +1,9 @@
+docker run --name mongodb
+-e MONGO_INITDB_ROOT_USERNAME=
+-e MONGO_INITDB_ROOT_PASSWORD=
+-v /mnt/mongodb:/data/db
+--network bridge
+-p 27017:27017
+-d
+mongo:latest
+
