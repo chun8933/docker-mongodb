@@ -7,3 +7,14 @@ docker run --name mongodb
 -d
 mongo:latest
 
+
+docker run --name mongo_express \
+--network bridge \
+-e ME_CONFIG_MONGODB_SERVER=mongodb \
+-e ME_CONFIG_MONGODB_ADMINUSERNAME=<USERNAME> \
+-e ME_CONFIG_MONGODB_ADMINPASSWORD=<PASSWORD> \
+-e ME_CONFIG_BASICAUTH_USERNAME=<USERNAME> \
+-e ME_CONFIG_BASICAUTH_PASSWORD=<PASSWORD> \
+-p 8081:8081 \
+-d \
+mongo-express:latest
